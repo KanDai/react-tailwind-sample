@@ -1,7 +1,7 @@
 export default function App() {
   return (
     <>
-      <header>
+      <header className="fixed top-0 flex h-16 justify-between">
         <div>
           <h1>
             <a href=".">
@@ -38,10 +38,10 @@ export default function App() {
         </button>
       </header>
 
-      <div>
-        <div>
+      <div className="relative h-[100vh] bg-[url('img/hero.jpg')] bg-cover bg-center">
+        <div className="flex h-full flex-col items-center justify-center text-white">
           <div>
-            <div>WEB DESIGN SPECIALIST</div>
+            <div className="text-4xl font-bold">WEB DESIGN SPECIALIST</div>
             <div>
               お客様の夢を叶える
               <br />
@@ -49,58 +49,45 @@ export default function App() {
             </div>
           </div>
           <div>
-            <a href="contact.html">contact</a>
+            <a
+              href="contact.html"
+              className="relative top-1/2 mt-8 inline-block min-w-[140px] -translate-y-1/2 rounded-full border border-white px-6 py-3 transition duration-300 ease-in-out after:absolute after:right-4 after:content-['>'] hover:bg-white hover:text-black"
+            >
+              contact
+            </a>
           </div>
         </div>
-        <span>SCROLL</span>
+        <span className="absolute bottom-4 right-4 text-white [writing-mode:vertical-rl] after:block after:h-12 after:w-[1px] after:animate-scroll-down-line after:bg-white after:content-['']">
+          SCROLL
+        </span>
       </div>
 
       <main>
         <section>
           <div>
             <div>
-              <h2>
-                news<span>お知らせ</span>
+              <h2 className="flex flex-col text-center text-xl md:text-9xl">
+                news<span className="text-xs">お知らせ</span>
               </h2>
             </div>
             <div>
               <div>
                 <ul>
-                  <li>
-                    <div>
-                      <time dateTime="2020-02-01">2030.02.01</time>
+                  {['', '', ''].map((_, i) => (
+                    <li key={i}>
                       <div>
-                        <span>お知らせ</span>
+                        <time dateTime="2020-02-01">2030.02.01</time>
+                        <div>
+                          <span>お知らせ</span>
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <a href="news-article.html">
-                        Webデザインニュースサイト「ウェブマガジン」に取材いただきました
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <time dateTime="2020-02-01">2030.01.25</time>
                       <div>
-                        <span>制作実績</span>
+                        <a href="news-article.html">
+                          Webデザインニュースサイト「ウェブマガジン」に取材いただきました
+                        </a>
                       </div>
-                    </div>
-                    <div>
-                      <a href="#">Smoothiesta様のWebサイトを制作いたしました</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <time dateTime="2020-02-01">2030.01.20</time>
-                      <div>
-                        <span>採用</span>
-                      </div>
-                    </div>
-                    <div>
-                      <a href="#">Webデザイナーを１名募集中です！</a>
-                    </div>
-                  </li>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
